@@ -14,6 +14,7 @@ import {
   LifeBuoy
 } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
+import { AmbientSoundPlayer } from "./AmbientSoundPlayer";
 
 interface HeaderProps {
   searchQuery: string;
@@ -95,6 +96,9 @@ export function Header({
             <RefreshCw className={`w-3.5 h-3.5 ${isRefreshing ? "animate-spin text-cyan-500" : ""}`} />
             <span>{isRefreshing ? "Scanning..." : `${nextSyncSeconds}s`}</span>
           </button>
+
+          {/* Ambient Continuous Audio Lounge */}
+          <AmbientSoundPlayer locale={isEn ? "en" : "ko"} />
 
           {/* Planetary Situation Report Button */}
           <button
